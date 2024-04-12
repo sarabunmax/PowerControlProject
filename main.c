@@ -94,8 +94,11 @@ void main(void)
     
     while(1) 
     {
+        if(flags.POWER_FLAG)
+        {LED_P = 1;}
         if(!BUTTON_POWER && !flags.POWER_FLAG)  // Якщо кнопка POWER натиснута і пристрій вимкнено
         {
+            LED_P = 1;
             flags.SMOOTH_START_FLAG = 1;
             if(!BUTTON_PLUS)  // Якщо кнопка PLUS натиснута
             {flags.BUTTON_FLAG = 1;}// Фіксуємо натискання кнопки PLUS та POWER разом
